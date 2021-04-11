@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #ac0303c9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pizza-name{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.slider {
+  position: relative;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  /* box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green; */
+}
+
+.pizza-name-box{
+  /* width: fit-content; */
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 10px #880000;
+}
+
+.price-nd-size{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+
+}
+
+.right-arrow {
+  position: absolute;
+  top:50%;
+  right:0px;
+  font-size: 4rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.2;
+}
+
+.right-arrow:hover{
+  opacity: 1;
+}
+
+
+.left-arrow {
+  position: absolute;
+  top:50%;
+  left:0px;
+  font-size: 4rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.2;
+}
+
+.left-arrow:hover{
+  opacity: 1;
+}
+
+
+.buttons{
+    margin-top: 100px;
+    display: flex;
+    gap: 40px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  height: 300px;
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.cartBox{
+  width: 900px;
+  height:600px;
+  overflow: scroll;
+  background-color: wheat;
+  margin: 20px auto;
+  display: none;
 }
