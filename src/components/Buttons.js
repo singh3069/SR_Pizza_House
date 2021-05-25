@@ -1,7 +1,7 @@
 import React  from 'react'
 import { ImageSliderData } from './ImageSliderData';
-import { Switch,  Route,} from "react-router-dom";
-import Cart from './Cart';
+// import { Switch,  Route,} from "react-router-dom";
+// import Cart from './Cart';
 
 
 
