@@ -3,14 +3,13 @@ import Buttons from './Buttons'
 import ImageSlider from './ImageSlider'
 import WelcomeCard from './WelcomeCard'
 import { ImageSliderData } from './ImageSliderData'
-// import { Switch,  Route,} from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Cart from './Cart';
 
 
 
 function PizzaContainer() {
-
-    const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
   const length = ImageSliderData.length;
 
   const nextSlide = () => {
@@ -23,20 +22,27 @@ function PizzaContainer() {
 
     return (
       <div>
-          <WelcomeCard/>
-        <div className="mx-auto block  justify-center w-boxWidth  h-boxHeight  my-3.5" >
-            <ImageSlider slides={ImageSliderData} nextSlide={nextSlide} prevSlide={prevSlide} current={current}/>
-            <Buttons current={current}/>
+        <WelcomeCard />
+        <div className="mx-auto block  justify-center w-boxWidth  h-boxHeight  my-3.5">
+          <ImageSlider
+            slides={ImageSliderData}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
+            current={current}
+          />
 
-            {/* <Switch>
-              <Route exact path = "/cart">
-                      <Cart />
-              </Route>
-            </Switch> */}
-            
+          <Buttons current={current} />
+
+          {/* <Router>
+        <Switch>
+          <Route exact path="/cart">
+            <Cart cart={current} />
+          </Route>
+        </Switch>
+      </Router> */}
         </div>
       </div>
-    )
+    );
 }
 
 export default PizzaContainer
