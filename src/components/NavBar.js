@@ -15,26 +15,18 @@ function NavBar() {
             <h1 className="text-txtColor"> SR Pizza House 🍕</h1>
           </Link>
 
-          <Link to="/cart">
+          <Link to="/cart" className="cartIconCartCount">
             <FontAwesomeIcon
               icon={faShoppingBasket}
               className="cursor-pointer"
             />
-            {items.length}
+            <p className=" text-txtColor">{items.length}</p>
           </Link>
         </nav>
-        {/* <Router>
-          <Switch>
-            <Route exact path="/cart">
-              <Cart />
-            </Route>
-          </Switch>
-        </Router> */}
       </div>
     );
 }
 
 export default NavBar
-
 
 

@@ -4,17 +4,17 @@ import {useCart , useDispatchCart} from '../HOC/Hoc'
 const CartItem = ({ product, index, handleRemove }) => {
   return (
     
-      <div className="">
-        <div className="">
-          <img src={product.imageUrl} className="" alt="Product" />
+      <div className="pizzaImageDetail">
+        <div className="cartImgDiv">
+          <img src={product.imageUrl} className="cartImg" alt="Product" />
         </div>
-        <div className="">
-          <h2 className="">{product.pizzaName}</h2>
+        <div className="cartPizzaDetails">
+          <div>
+          <h2>{product.pizzaName}</h2>
           <h2>{product.size}</h2>
-          <div className=""> 
-            <p> Price :- <strong>{product.price}</strong></p>
+          <p> Price :- <strong>{product.price}</strong></p>
           </div>
-          <button onClick={() => handleRemove(index)}>Remove from cart</button>
+          <button className="removeFromCartBttn" onClick={() => handleRemove(index)}>Remove</button>
         </div>
       </div>
   );
@@ -23,7 +23,7 @@ const CartItem = ({ product, index, handleRemove }) => {
 export default function Store() {
   const items = useCart();
   const dispatch = useDispatchCart();
-  const totalPrice = items.reduce((total, b) => total + b.price, 0);
+  const totalPrice = items.reduce((total, p) => total + p.price , 0);
 
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
@@ -31,25 +31,25 @@ export default function Store() {
   
   if (items.length === 0) {
     return (
-      <main>
+      <div className="emptyCartMsz">
         <p>Cart is empty</p>
-      </main>
+      </div>
     );
   }
   return (
-    <main>
-      <p>
-        Total price:{" "}{totalPrice}
-      </p>
+    <div>
       {items.map((item, index) => (
         <CartItem
-          handleRemove={handleRemove}
-          key={index}
-          product={item}
-          index={index}
+        handleRemove={handleRemove}
+        key={index}
+        product={item}
+        index={index}
         />
       ))}
-    </main>
+        <p>
+          Total price:{" "}{totalPrice}
+        </p>
+    </div>
   );
 }
 

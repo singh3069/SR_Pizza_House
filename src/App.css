@@ -21,7 +21,7 @@ body{
   align-items: center;
 }
 
-.image {
+.image{
   width: 400px;
   height: 300px;
   border-radius: 10px;
@@ -95,6 +95,15 @@ body{
   transform: scale(1.08);
 }
 
+.cartCount{
+  color: white;
+}
+
+.cartIconCartCount{
+  display: flex;
+}
+
+
 .cartBox{
   width: 900px;
   height:600px;
@@ -102,4 +111,54 @@ body{
   background-color: wheat;
   margin: 20px auto;
   display: none;
+}
+
+
+.pizzaImageDetail{
+    background: wheat;
+    width: 388px;
+    height: 335px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    grid-gap: 1px;
+    grid-gap: 1px;
+    gap: 1px;
+    margin: 25px;
+    border-radius: 50px;
+}
+
+.cartPizzaDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 265px;
+}
+
+.removeFromCartBttn{
+    background: black;
+    color: white;
+    border-radius: 5px;
+    width: 75px;
+    height: 35px;
+}
+
+.removeFromCartBttn:hover{
+    background: crimson;
+}
+
+.cartImg{
+    width: 215px;
+    height: 201px;
+}
+
+.emptyCartMsz{
+    margin: 10px auto;
+    width: 200px;
+    height: fit-content;
+    font-size: 30px;
+    color: white;
+    text-decoration: underline;
 }
