@@ -116,7 +116,7 @@ body{
 
 .pizzaImageDetail{
     background: wheat;
-    width: 388px;
+    width: 340px;
     height: 335px;
     display: flex;
     flex-direction: row;
@@ -161,4 +161,10 @@ body{
     font-size: 30px;
     color: white;
     text-decoration: underline;
+}
+
+.placeOrderBttn{
+    background: black;
+    color: white;
+    border: 1px solid white;
 }

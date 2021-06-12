@@ -10,7 +10,7 @@ const CartItem = ({ product, index, handleRemove }) => {
         </div>
         <div className="cartPizzaDetails">
           <div>
-          <h2>{product.pizzaName}</h2>
+          <h2><u>{product.pizzaName}</u></h2>
           <h2>{product.size}</h2>
           <p> Price :- <strong>{product.price}</strong></p>
           </div>
@@ -49,6 +49,8 @@ export default function Store() {
         <p>
           Total price:{" "}{totalPrice}
         </p>
+        <br/>
+        <button className="placeOrderBttn">Place Order</button>
     </div>
   );
 }
