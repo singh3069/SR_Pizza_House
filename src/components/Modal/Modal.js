@@ -24,6 +24,10 @@ function Modal(props) {
           <input type="text" className="detailFormInputs" required />
         </label>
         <label>
+          Email:
+          <input type="email" className="detailFormInputs" required />
+        </label>
+        <label>
           Pincode:
           <input type="number" className="detailFormInputs" required />
         </label>
