@@ -24,7 +24,7 @@ export default function Store() {
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce((total, { price = 0 }) => total + price, 0);
-  console.log(totalPrice)
+  // console.log(totalPrice)
 
 
   const handleRemove = (index) => {
@@ -39,20 +39,24 @@ export default function Store() {
     );
   }
   return (
-    <div>
+    <div className="cartItemsDiv">
+      <div className="pizzaDetailDiv">
       {items.map((item, index) => (
-        <CartItem
-        handleRemove={handleRemove}
-        key={index}
-        product={item}
-        index={index}
-        />
-      ))}
-        <p>
-          Total price:{" "}₹{totalPrice}
-        </p>
-        <br/>
-        <button className="placeOrderBttn">Place Order</button>
+              <CartItem
+                handleRemove={handleRemove}
+                key={index}
+                product={item}
+                index={index}
+              />
+            ))}
+      </div>
+      
+      <div className="priceNdOrderBttn">
+        <p className="totalPrice">Total price: ₹{totalPrice}</p>
+      <br />
+      <button className="placeOrderBttn">Place Order</button>
+      </div>
+      
     </div>
   );
 }

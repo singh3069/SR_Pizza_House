@@ -168,5 +168,39 @@ body{
 .placeOrderBttn{
     background: black;
     color: white;
-    border: 1px solid white;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    margin-left: 10px;
+}
+
+.placeOrderBttn:hover{
+  background:rgb(38, 182, 2) ;
+}
+
+.cartItemsDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pizzaDetailDiv{
+    display: flex;
+    /* width: 78%; */
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.priceNdOrderBttn{
+  display: flex;
+  justify-content: center;
+}
+
+.totalPrice{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline;
 }

@@ -10,7 +10,7 @@ function Buttons({ current }) {
 
 
   const addToCart = (item) => {
-    console.log(item);
+    // console.log(item);
     dispatch({type:'ADD', item});
   };
 
