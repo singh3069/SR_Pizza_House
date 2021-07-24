@@ -12,7 +12,7 @@ const CartItem = ({ product, index, handleRemove }) => {
           <div>
           <h2><u>{product.pizzaName}</u></h2>
           <h2>{product.size}</h2>
-          <p> Price :- <strong>{product.price}</strong></p>
+          <p> Price :- <strong>₹{product.price}</strong></p>
           </div>
           <button className="removeFromCartBttn" onClick={() => handleRemove(index)}>Remove</button>
         </div>
@@ -23,7 +23,9 @@ const CartItem = ({ product, index, handleRemove }) => {
 export default function Store() {
   const items = useCart();
   const dispatch = useDispatchCart();
-  const totalPrice = items.reduce((total, p) => total + p.price , 0);
+  const totalPrice = items.reduce((total, { price = 0 }) => total + price, 0);
+  console.log(totalPrice)
+
 
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
@@ -47,7 +49,7 @@ export default function Store() {
         />
       ))}
         <p>
-          Total price:{" "}{totalPrice}
+          Total price:{" "}₹{totalPrice}
         </p>
         <br/>
         <button className="placeOrderBttn">Place Order</button>

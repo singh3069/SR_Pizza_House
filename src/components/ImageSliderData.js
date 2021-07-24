@@ -11,7 +11,7 @@ export const ImageSliderData = [
     id: 1,
     imageUrl: Pizza01,
     pizzaName: "Marg Herit Pizza",
-    price: "₹259",
+    price: 259,
     size: "Medium",
   },
 
@@ -19,7 +19,7 @@ export const ImageSliderData = [
     id: 2,
     imageUrl: Pizza02,
     pizzaName: "Farm House Pizza",
-    price: "₹399",
+    price: 399,
     size: "Medium",
   },
 
@@ -27,7 +27,7 @@ export const ImageSliderData = [
     id: 3,
     imageUrl: Pizza03,
     pizzaName: "Peppy Paneer Pizza",
-    price: "₹349",
+    price: 349,
     size: "Medium",
   },
 
@@ -35,7 +35,7 @@ export const ImageSliderData = [
     id: 4,
     imageUrl: Pizza04,
     pizzaName: "Mexican Green Wave Pizza",
-    price: "₹120",
+    price: 120,
     size: "Medium",
   },
 
@@ -43,7 +43,7 @@ export const ImageSliderData = [
     id: 5,
     imageUrl: Pizza05,
     pizzaName: "Paneer Makhni Pizza",
-    price: "₹100",
+    price: 100,
     size: "Medium",
   },
 
@@ -51,7 +51,7 @@ export const ImageSliderData = [
     id: 6,
     imageUrl: Pizza06,
     pizzaName: "Corn Cheese Pizza",
-    price: "₹199",
+    price: 199,
     size: "Medium",
   },
 ];
