@@ -30,6 +30,8 @@ export default function Store() {
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
+
+
   
   if (items.length === 0) {
     return (

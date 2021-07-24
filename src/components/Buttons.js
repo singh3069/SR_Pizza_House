@@ -14,6 +14,9 @@ function Buttons({ current }) {
     dispatch({type:'ADD', item});
   };
 
+  const customizePizza = () => {
+    alert("I'm working on it ")
+  }
   return (
     <div>
       <div className="buttons">
@@ -24,7 +27,10 @@ function Buttons({ current }) {
           Add to 🛒
         </button>
 
-        <button className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg">
+        <button
+          onClick={customizePizza}
+          className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg"
+        >
           Customize Your Pizza👨‍🍳
         </button>
       </div>
