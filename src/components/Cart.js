@@ -1,5 +1,6 @@
-import React from "react";
+import {React,useState} from "react";
 import {useCart , useDispatchCart} from '../HOC/Hoc'
+import Modal from "./Modal/Modal";
 
 const CartItem = ({ product, index, handleRemove }) => {
   return (
@@ -21,10 +22,21 @@ const CartItem = ({ product, index, handleRemove }) => {
 };
 
 export default function Store() {
+  const [modalState, setModalState] = useState(false);
+
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce((total, { price = 0 }) => total + price, 0);
   // console.log(totalPrice)
+
+  const openFormModalHandler = () => {
+    // setSendingData(selectedItem);
+    setModalState(true);
+  };
+
+  const closeFormModalHandler = () => {
+    setModalState(false);
+  };
 
 
   const handleRemove = (index) => {
@@ -43,22 +55,26 @@ export default function Store() {
   return (
     <div className="cartItemsDiv">
       <div className="pizzaDetailDiv">
-      {items.map((item, index) => (
-              <CartItem
-                handleRemove={handleRemove}
-                key={index}
-                product={item}
-                index={index}
-              />
-            ))}
+        {items.map((item, index) => (
+          <CartItem
+            handleRemove={handleRemove}
+            key={index}
+            product={item}
+            index={index}
+          />
+        ))}
       </div>
-      
+
       <div className="priceNdOrderBttn">
         <p className="totalPrice">Total price: ₹{totalPrice}</p>
-      <br />
-      <button className="placeOrderBttn">Place Order</button>
+        <br />
+        <button className="placeOrderBttn" onClick={openFormModalHandler}>
+          Place Order
+        </button>
       </div>
-      
+      {modalState && (
+        <Modal closeHandler={closeFormModalHandler} totalPrice={totalPrice} />
+      )}
     </div>
   );
 }
