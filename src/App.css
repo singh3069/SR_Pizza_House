@@ -1,13 +1,13 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-color: #ac0303c9;
 }
 
-.pizza-name{
+.pizza-name {
   display: flex;
   justify-content: center;
   font-size: 25px;
@@ -21,7 +21,7 @@ body{
   align-items: center;
 }
 
-.image{
+.image {
   width: 400px;
   height: 300px;
   border-radius: 10px;
@@ -29,24 +29,23 @@ body{
   /* box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green; */
 }
 
-.pizza-name-box{
+.pizza-name-box {
   /* width: fit-content; */
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 10px #880000;
 }
 
-.price-nd-size{
+.price-nd-size {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
-
 }
 
 .right-arrow {
   position: absolute;
-  top:50%;
-  right:0px;
+  top: 50%;
+  right: 0px;
   font-size: 4rem;
   color: #000;
   z-index: 10;
@@ -55,16 +54,15 @@ body{
   opacity: 0.2;
 }
 
-.right-arrow:hover{
+.right-arrow:hover {
   color: #f79c06;
   opacity: 1;
 }
-
 
 .left-arrow {
   position: absolute;
-  top:50%;
-  left:0px;
+  top: 50%;
+  left: 0px;
   font-size: 4rem;
   color: #000;
   z-index: 10;
@@ -73,16 +71,15 @@ body{
   opacity: 0.2;
 }
 
-.left-arrow:hover{
+.left-arrow:hover {
   color: #f79c06;
   opacity: 1;
 }
 
-
-.buttons{
-    margin-top: 100px;
-    display: flex;
-    gap: 40px;
+.buttons {
+  margin-top: 100px;
+  display: flex;
+  gap: 40px;
 }
 
 .slide {
@@ -97,119 +94,117 @@ body{
   transform: scale(1.08);
 }
 
-.cartCount{
+.cartCount {
   color: white;
 }
 
-.cartIconCartCount{
+.cartIconCartCount {
   display: flex;
 }
 
-
-.cartBox{
+.cartBox {
   width: 900px;
-  height:600px;
+  height: 600px;
   overflow: scroll;
   background-color: wheat;
   margin: 20px auto;
   display: none;
 }
 
-
-.pizzaImageDetail{
-    background: wheat;
-    width: 430px;
-    height: 335px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    grid-gap: 1px;
-    grid-gap: 1px;
-    gap: 1px;
-    margin: 25px;
-    border-radius: 50px;
+.pizzaImageDetail {
+  background: wheat;
+  width: 430px;
+  height: 335px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  grid-gap: 1px;
+  grid-gap: 1px;
+  gap: 1px;
+  margin: 25px;
+  border-radius: 50px;
 }
 
-.cartPizzaDetails{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 265px;
+.cartPizzaDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 265px;
 }
 
-.removeFromCartBttn{
-    background: black;
-    color: white;
-    border-radius: 5px;
-    width: 75px;
-    height: 35px;
+.removeFromCartBttn {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  width: 75px;
+  height: 35px;
 }
 
-.removeFromCartBttn:hover{
-    background: crimson;
+.removeFromCartBttn:hover {
+  background: crimson;
 }
 
-.cartImg{
-    width: 215px;
-    height: 175px;
+.cartImg {
+  width: 215px;
+  height: 175px;
 }
 
-.emptyCartMsz{
-    margin: 10px auto;
-    width: 200px;
-    height: fit-content;
-    font-size: 30px;
-    color: white;
-    text-decoration: underline;
+.emptyCartMsz {
+  margin: 10px auto;
+  width: 200px;
+  height: fit-content;
+  font-size: 30px;
+  color: white;
+  text-decoration: underline;
 }
 
-.placeOrderBttn{
-    background: black;
-    color: white;
-    border-radius: 5px;
-    width: 100px;
-    height: 35px;
-    margin-left: 10px;
+.placeOrderBttn {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 35px;
+  margin-left: 10px;
 }
 
-.placeOrderBttn:hover{
-  background:rgb(38, 182, 2) ;
+.placeOrderBttn:hover {
+  background: rgb(38, 182, 2);
 }
 
-.cartItemsDiv{
+.cartItemsDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.pizzaDetailDiv{
-    display: flex;
-    /* width: 78%; */
-    flex-wrap: wrap;
-    /* align-items: center; */
-    justify-content: center;
+.pizzaDetailDiv {
+  display: flex;
+  /* width: 78%; */
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
 }
 
-.priceNdOrderBttn{
+.priceNdOrderBttn {
   display: flex;
   justify-content: center;
 }
 
-.totalPrice{
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 20px;
-    text-decoration: underline;
+.totalPrice {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
-.ingredents{
-        display: flex;
-    /* background-color: blueviolet; */
-    height: 150px;
-    width: 163px;
-    flex-direction: column;
-    align-items: center;
+.ingredients {
+  display: flex;
+  /* background-color: blueviolet; */
+  height: 150px;
+  width: 163px;
+  flex-direction: column;
+  align-items: center;
 }

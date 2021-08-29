@@ -1,11 +1,9 @@
-import {React,useState} from "react";
-import {useCart , useDispatchCart} from '../HOC/Hoc'
+import { React, useState } from "react";
+import { useCart, useDispatchCart } from "../HOC/Hoc";
 import Modal from "./Modal/Modal";
-import Ingredents from "./Ingredents/Ingredents";
-
+import Ingredients from "./Ingredients/Ingredients";
 
 const CartItem = ({ product, index, handleRemove }) => {
-
   return (
     <div className="pizzaImageDetail">
       <div className="cartImgDiv">
@@ -29,7 +27,7 @@ const CartItem = ({ product, index, handleRemove }) => {
           Remove
         </button>
       </div>
-      <Ingredents/>
+      <Ingredients />
     </div>
   );
 };
@@ -49,16 +47,14 @@ export default function Store() {
     setModalState(false);
   };
 
-
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
   };
 
-const abc = () => {
+  const abc = () => {
     closeFormModalHandler();
   };
 
-  
   if (items.length === 0) {
     return (
       <div className="emptyCartMsz">
@@ -78,7 +74,6 @@ const abc = () => {
             index={index}
           />
         ))}
-        
       </div>
 
       <div className="priceNdOrderBttn">
@@ -98,23 +93,3 @@ const abc = () => {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
