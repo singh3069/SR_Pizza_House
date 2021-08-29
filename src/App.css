@@ -118,7 +118,7 @@ body{
 
 .pizzaImageDetail{
     background: wheat;
-    width: 340px;
+    width: 430px;
     height: 335px;
     display: flex;
     flex-direction: row;
@@ -153,7 +153,7 @@ body{
 
 .cartImg{
     width: 215px;
-    height: 201px;
+    height: 175px;
 }
 
 .emptyCartMsz{
@@ -203,4 +203,13 @@ body{
     display: flex;
     font-size: 20px;
     text-decoration: underline;
+}
+
+.ingredents{
+        display: flex;
+    /* background-color: blueviolet; */
+    height: 150px;
+    width: 163px;
+    flex-direction: column;
+    align-items: center;
 }

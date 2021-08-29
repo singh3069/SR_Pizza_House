@@ -15,7 +15,8 @@ function Buttons({ current }) {
   };
 
   const customizePizza = () => {
-    alert("I'm working on it ")
+    // dispatch({type:'CUSTOM'});
+    // alert("I'm working on it ")
   }
   return (
     <div>

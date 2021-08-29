@@ -1,16 +1,13 @@
 import React from "react";
-import "./modal.css"
-// import { useCart, useDispatchCart } from "../../HOC/Hoc";
-
-
+import "./modal.css";
 
 function Modal(props) {
-  const { closeHandler, totalPrice } = props;
+  const { closeHandler, totalPrice , abc } = props;
   
   return (
     <div className="modalMainDiv">
       <span onClick={closeHandler} className="closeBtn"></span>
-      <form className="detailForm">
+      <form className ="detailForm" onSubmit={abc}>
         <label>
           First Name:
           <input type="text" className="detailFormInputs" required />
@@ -32,11 +29,12 @@ function Modal(props) {
           <input type="number" className="detailFormInputs" required />
         </label>
         <p>Total price: ₹{totalPrice}</p>
-        <button className="confirmOrderBttn">Confirm Order</button>
+        <button className="confirmOrderBttn" type="submit">
+          Confirm Order
+        </button>
       </form>
     </div>
   );
 }
 
-export default Modal
-
+export default Modal;
