@@ -207,4 +207,21 @@ body {
   width: 163px;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
+}
+
+/* .ingredients:hover {
+  height: 150px;
+} */
+
+.toppings {
+  height: 30px;
+  background: lightslategrey;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  width: auti;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
 }

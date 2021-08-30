@@ -1,65 +1,61 @@
-.modalMainDiv{
-    display: flex;
-    width: 25vw;
-    height: 53vh;
-    border: 1px solid #222;
-    /* background-color: rgba(255, 228, 196, 0.479); */
-    background: #f79c06;
-    margin: 10px auto;
-    position: fixed;
-    top: 20%;
-    /* left: 35%; */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 15px;
+.modalMainDiv {
+  display: flex;
+  width: 25vw;
+  height: 53vh;
+  border: 1px solid #222;
+  /* background-color: rgba(255, 228, 196, 0.479); */
+  background: #f79c06;
+  margin: 10px auto;
+  position: fixed;
+  top: 20%;
+  /* left: 35%; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
 }
-
 
 .closeBtn::after {
-    position: absolute;
-    content: " + ";
-    transform: rotate(45deg);
-    font-size: 35px;
-    color: #222;
-    cursor: pointer;
-    right: 0px;
-    top: -4%;
+  position: absolute;
+  content: " + ";
+  transform: rotate(45deg);
+  font-size: 35px;
+  color: #222;
+  cursor: pointer;
+  right: 0px;
+  top: -4%;
 }
 
-.detailForm{
-    /* background-color: orange; */
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 80%;
-    justify-content: space-evenly;
-    align-items: center;
+.detailForm {
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.detailFormInputs{
-    border: 1px solid black;
-    border-radius: 5px;
+.detailFormInputs {
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .detailForm p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.confirmOrderBttn{
-    background: black;
-    color: white;
-    border-radius: 5px;
-    width: 125px;
-    height: 35px;
-    
+.confirmOrderBttn {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  width: 130px;
+  height: 40px;
 }
 
-
-.confirmOrderBttn:hover{
-    background:rgb(38, 182, 2)
+.confirmOrderBttn:hover {
+  background: rgb(38, 182, 2);
 }
-
 
 /* =================================CustomModal======================= */
 

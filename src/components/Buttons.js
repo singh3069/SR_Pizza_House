@@ -1,23 +1,21 @@
 import React from "react";
-import { ImageSliderData } from "./ImageSliderData"; 
+import { ImageSliderData } from "./ImageSliderData";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cart from "./Cart";
-import {useDispatchCart} from '../HOC/Hoc'
+import { useDispatchCart } from "../HOC/Hoc";
 
 function Buttons({ current }) {
-  const currentItem = ImageSliderData[current]
+  const currentItem = ImageSliderData[current];
   const dispatch = useDispatchCart();
 
-
   const addToCart = (item) => {
-    // console.log(item);
-    dispatch({type:'ADD', item});
+    dispatch({ type: "ADD", item });
   };
 
-  const customizePizza = () => {
-    // dispatch({type:'CUSTOM'});
-    // alert("I'm working on it ")
-  }
+  // const customizePizza = () => {
+  //   // dispatch({type:'CUSTOM'});
+  //   // alert("I'm working on it ")
+  // }
   return (
     <div>
       <div className="buttons">
@@ -26,13 +24,6 @@ function Buttons({ current }) {
           className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg"
         >
           Add to 🛒
-        </button>
-
-        <button
-          onClick={customizePizza}
-          className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg"
-        >
-          Customize Your Pizza👨‍🍳
         </button>
       </div>
 

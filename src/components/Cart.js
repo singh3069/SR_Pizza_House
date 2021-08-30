@@ -2,8 +2,42 @@ import { React, useState } from "react";
 import { useCart, useDispatchCart } from "../HOC/Hoc";
 import Modal from "./Modal/Modal";
 import Ingredients from "./Ingredients/Ingredients";
+// import Alert from "@material-ui/core/alert";
+
+var ingredientsPrice = {
+  tomato: 10,
+  cheese: 10,
+  mushroom: 15,
+  chilli: 5,
+};
+
+var ingredients = {
+  tomato: 0,
+  cheese: 0,
+  mushroom: 0,
+  chilli: 0,
+};
 
 const CartItem = ({ product, index, handleRemove }) => {
+  const [ingredientsQuantity, setIngredientsQuantity] = useState(ingredients);
+
+  const addIngredients = (topping) => {
+    setIngredientsQuantity((prev) => ({
+      ...prev,
+      [topping]: prev[topping] + 1,
+    }));
+  };
+
+  const removeIngredients = (topping) => {
+    // if (ingredentsQuantity > 0) {
+    setIngredientsQuantity((prev) => ({
+      ...prev,
+      [topping]: prev[topping] - 1,
+    }));
+    // }
+    // console.log(setIngredientsQuantity);
+  };
+
   return (
     <div className="pizzaImageDetail">
       <div className="cartImgDiv">
@@ -27,7 +61,12 @@ const CartItem = ({ product, index, handleRemove }) => {
           Remove
         </button>
       </div>
-      <Ingredients />
+      <Ingredients
+        addIngredients={addIngredients}
+        removeIngredients={removeIngredients}
+        ingredientsQuantity={ingredientsQuantity}
+        ingredientsPrice={ingredientsPrice}
+      />
     </div>
   );
 };
@@ -52,7 +91,7 @@ export default function Store() {
   };
 
   const abc = () => {
-    closeFormModalHandler();
+    // closeFormModalHandler();
   };
 
   if (items.length === 0) {
