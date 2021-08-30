@@ -1,19 +1,4 @@
 import React, { useState } from "react";
-import CustomizeButton from "./Button/CustomizeButton";
-
-// var ingredientsPrice = {
-//   tomato: 10,
-//   cheese: 10,
-//   mushroom: 15,
-//   chilli: 5,
-// };
-
-// var ingredients = {
-//   tomato: 0,
-//   cheese: 0,
-//   mushroom: 0,
-//   chilli: 0,
-// };
 
 function Ingredients({
   addIngredients,
@@ -21,72 +6,70 @@ function Ingredients({
   ingredientsQuantity,
   ingredientsPrice,
 }) {
-  // const [ingredientsQuantity, setIngredientsQuantity] = useState(ingredients);
+  const [showIngredient, setShowIngredient] = useState(false);
 
-  // const addIngredients = (topping) => {
-  //   setIngredientsQuantity((prev) => ({
-  //     ...prev,
-  //     [topping]: prev[topping] + 1,
-  //   }));
-  // };
-
-  // const removeIngredients = (topping) => {
-  //   // if (ingredentsQuantity > 0) {
-  //   setIngredientsQuantity((prev) => ({
-  //     ...prev,
-  //     [topping]: prev[topping] - 1,
-  //   }));
-  //   // }
-  //   // console.log(setIngredientsQuantity);
-  // };
+  function toggleIngredients() {
+    setShowIngredient(!showIngredient);
+  }
 
   return (
     <div>
-      <div className="ingredients">
-        <h4>Extra Ingrdents</h4>
+      {showIngredient && (
+        <div className="ingredients">
+          <u>
+            <h3>Extra Ingrdents</h3>
+          </u>
 
-        <div className="toppings">
-          <button onClick={() => removeIngredients("tomato")}>-</button>
-          <span>
-            🍅 {ingredientsQuantity.tomato}, ₹
-            {ingredientsPrice.tomato * ingredientsQuantity.tomato}
-          </span>
-          <button onClick={() => addIngredients("tomato")}>+</button>
+          <div className="toppings">
+            <button onClick={() => removeIngredients("tomato")}>-</button>
+            <span>
+              🍅 {ingredientsQuantity.tomato}, ₹
+              {ingredientsPrice.tomato * ingredientsQuantity.tomato}
+            </span>
+            <button onClick={() => addIngredients("tomato")}>+</button>
+          </div>
+
+          {/* --------------------------------------------------------------------- */}
+          <div className="toppings">
+            <button onClick={() => removeIngredients("cheese")}>-</button>
+            <span>
+              🧀 {ingredientsQuantity.cheese}, ₹
+              {ingredientsPrice.cheese * ingredientsQuantity.cheese}
+            </span>
+            <button onClick={() => addIngredients("cheese")}>+</button>
+          </div>
+
+          {/* --------------------------------------------------------------------- */}
+
+          <div className="toppings">
+            <button onClick={() => removeIngredients("mushroom")}>-</button>
+            <span>
+              🍄 {ingredientsQuantity.mushroom}, ₹
+              {ingredientsPrice.mushroom * ingredientsQuantity.mushroom}
+            </span>
+            <button onClick={() => addIngredients("mushroom")}>+</button>
+          </div>
+
+          {/* --------------------------------------------------------------------- */}
+
+          <div className="toppings">
+            <button onClick={() => removeIngredients("chilli")}>-</button>
+            <span>
+              🌶 {ingredientsQuantity.chilli}, ₹
+              {ingredientsPrice.chilli * ingredientsQuantity.chilli}
+            </span>
+            <button onClick={() => addIngredients("chilli")}>+</button>
+          </div>
         </div>
-
-        {/* --------------------------------------------------------------------- */}
-        <div className="toppings">
-          <button onClick={() => removeIngredients("cheese")}>-</button>
-          <span>
-            🧀 {ingredientsQuantity.cheese}, ₹
-            {ingredientsPrice.cheese * ingredientsQuantity.cheese}
-          </span>
-          <button onClick={() => addIngredients("cheese")}>+</button>
-        </div>
-
-        {/* --------------------------------------------------------------------- */}
-
-        <div className="toppings">
-          <button onClick={() => removeIngredients("mushroom")}>-</button>
-          <span>
-            🍄 {ingredientsQuantity.mushroom}, ₹
-            {ingredientsPrice.mushroom * ingredientsQuantity.mushroom}
-          </span>
-          <button onClick={() => addIngredients("mushroom")}>+</button>
-        </div>
-
-        {/* --------------------------------------------------------------------- */}
-
-        <div className="toppings">
-          <button onClick={() => removeIngredients("chilli")}>-</button>
-          <span>
-            🌶 {ingredientsQuantity.chilli}, ₹
-            {ingredientsPrice.chilli * ingredientsQuantity.chilli}
-          </span>
-          <button onClick={() => addIngredients("chilli")}>+</button>
-        </div>
+      )}
+      <div className="customizeBttnDiv">
+        <button
+          className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg"
+          onClick={toggleIngredients}
+        >
+          👨‍🍳
+        </button>
       </div>
-      <CustomizeButton />
     </div>
   );
 }

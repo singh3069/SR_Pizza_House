@@ -120,11 +120,11 @@ body {
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  grid-gap: 1px;
-  grid-gap: 1px;
   gap: 1px;
   margin: 25px;
-  border-radius: 50px;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid black;
 }
 
 .cartPizzaDetails {
@@ -202,12 +202,18 @@ body {
 
 .ingredients {
   display: flex;
-  /* background-color: blueviolet; */
-  height: 150px;
+  background-color: wheat;
+  height: 180px;
   width: 163px;
   flex-direction: column;
   align-items: center;
+  grid-gap: 5px;
   gap: 5px;
+  position: absolute;
+  left: 33%;
+  top: 25%;
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
 /* .ingredients:hover {
@@ -216,7 +222,7 @@ body {
 
 .toppings {
   height: 30px;
-  background: lightslategrey;
+  /* background: lightslategrey; */
   border: 1px solid black;
   border-radius: 5px;
   display: flex;
@@ -224,4 +230,9 @@ body {
   width: 100px;
   justify-content: center;
   align-items: center;
+}
+
+.customizeBttnDiv {
+  display: flex;
+  justify-content: center;
 }

@@ -20,14 +20,16 @@ var ingredients = {
 
 const CartItem = ({ product, index, handleRemove }) => {
   const [ingredientsQuantity, setIngredientsQuantity] = useState(ingredients);
+  const [toppingPrice, setToppingPrice] = useState(0);
 
   const addIngredients = (topping) => {
     setIngredientsQuantity((prev) => ({
       ...prev,
       [topping]: prev[topping] + 1,
     }));
+    setToppingPrice(ingredients.topping);
   };
-
+  console.log(toppingPrice);
   const removeIngredients = (topping) => {
     // if (ingredentsQuantity > 0) {
     setIngredientsQuantity((prev) => ({
