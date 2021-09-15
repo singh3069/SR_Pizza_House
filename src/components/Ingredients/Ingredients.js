@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function Ingredients({
-  addIngredients,
-  removeIngredients,
-  ingredientsQuantity,
+  handleSelectItem,
+  handleRemoveItem,
+  ingredients,
+  selected,
   ingredientsPrice,
-  toppingPrice,
 }) {
   const [showIngredient, setShowIngredient] = useState(false);
 
@@ -20,47 +20,22 @@ function Ingredients({
           <u>
             <h3>Extra Ingrdents</h3>
           </u>
-
-          <div className="toppings">
-            <button onClick={() => removeIngredients("tomato")}>-</button>
-            <span>
-              🍅 {ingredientsQuantity.tomato}, ₹
-              {ingredientsPrice.tomato * ingredientsQuantity.tomato}
-            </span>
-            <button onClick={() => addIngredients("tomato")}>+</button>
-          </div>
-
-          {/* --------------------------------------------------------------------- */}
-          <div className="toppings">
-            <button onClick={() => removeIngredients("cheese")}>-</button>
-            <span>
-              🧀 {ingredientsQuantity.cheese}, ₹
-              {ingredientsPrice.cheese * ingredientsQuantity.cheese}
-            </span>
-            <button onClick={() => addIngredients("cheese")}>+</button>
-          </div>
-
-          {/* --------------------------------------------------------------------- */}
-
-          <div className="toppings">
-            <button onClick={() => removeIngredients("mushroom")}>-</button>
-            <span>
-              🍄 {ingredientsQuantity.mushroom}, ₹
-              {ingredientsPrice.mushroom * ingredientsQuantity.mushroom}
-            </span>
-            <button onClick={() => addIngredients("mushroom")}>+</button>
-          </div>
-
-          {/* --------------------------------------------------------------------- */}
-
-          <div className="toppings">
-            <button onClick={() => removeIngredients("chilli")}>-</button>
-            <span>
-              🌶 {ingredientsQuantity.chilli}, ₹
-              {ingredientsPrice.chilli * ingredientsQuantity.chilli}
-            </span>
-            <button onClick={() => addIngredients("chilli")}>+</button>
-          </div>
+          {/* <p>Toppig Price: {calTotalPrice()}</p> */}
+          {Object.keys(ingredients).map((ing) => (
+            <div key={ing} className="toppings">
+              <button
+                disabled={!selected[ing]}
+                onClick={() => handleRemoveItem(ing)}
+              >
+                -
+              </button>
+              <p>
+                {ing}: {selected[ing]} - ₹{" "}
+                {selected[ing] ? selected[ing] * ingredientsPrice[ing] : 0}
+              </p>
+              <button onClick={() => handleSelectItem(ing)}>+</button>
+            </div>
+          ))}
         </div>
       )}
       <div className="customizeBttnDiv">

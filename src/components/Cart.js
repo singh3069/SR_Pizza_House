@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { useCart, useDispatchCart } from "../HOC/Hoc";
 import Modal from "./Modal/Modal";
 import Ingredients from "./Ingredients/Ingredients";
@@ -22,36 +22,11 @@ const CartItem = ({
   product,
   index,
   handleRemove,
-  toppingPrice,
-  addIngredients,
-  removeIngredients,
-  ingredientsQuantity,
+  handleSelectItem,
+  handleRemoveItem,
+  calTotalPrice,
+  selected,
 }) => {
-  // const [toppinPrice, setToppingPrice] = useState(0);
-
-  // const addIngredients = (topping) => {
-  //   setIngredientsQuantity((prev) => ({
-  //     ...prev,
-  //     [topping]: prev[topping] + 1,
-  //   }));
-  //   setToppingPrice(ingredientsPrice[topping] * ingredientsQuantity[topping]);
-
-  //   // setTimeout(() => {
-  //   //   const toppingTotal =
-  //   //     ingredientsPrice[topping] * ingredientsQuantity[topping];
-  //   // }, 100);
-  // };
-
-  // const removeIngredients = (topping) => {
-  //   if (ingredientsQuantity[topping] > 0) {
-  //     setIngredientsQuantity((prev) => ({
-  //       ...prev,
-  //       [topping]: prev[topping] - 1,
-  //     }));
-  //     setToppingPrice(ingredientsPrice[topping] * ingredientsQuantity[topping]);
-  //   }
-  // };
-
   return (
     <div className="pizzaImageDetail">
       <div className="cartImgDiv">
@@ -65,10 +40,7 @@ const CartItem = ({
           <h2>{product.size}</h2>
           <p>
             {" "}
-            Price :-{" "}
-            <strong>
-              ₹{product.price}+{toppingPrice}
-            </strong>
+            Price :- <strong>₹{product.price + calTotalPrice()}</strong>
           </p>
         </div>
         <button
@@ -79,10 +51,11 @@ const CartItem = ({
         </button>
       </div>
       <Ingredients
-        addIngredients={addIngredients}
-        removeIngredients={removeIngredients}
+        handleSelectItem={handleSelectItem}
+        handleRemoveItem={handleRemoveItem}
+        ingredients={ingredients}
+        selected={selected}
         ingredientsPrice={ingredientsPrice}
-        ingredientsQuantity={ingredientsQuantity}
       />
     </div>
   );
@@ -91,40 +64,6 @@ const CartItem = ({
 export default function Store() {
   const [modalState, setModalState] = useState(false);
   const [selected, setSelected] = useState({ ...ingredients });
-  // ---------
-  const [ingredientsQuantity, setIngredientsQuantity] = useState(ingredients);
-  const [toppingPrice, setToppingPrice] = useState("");
-
-  const addIngredients = (topping) => {
-    setIngredientsQuantity((prev) => ({
-      ...prev,
-      [topping]: prev[topping] + 1,
-    }));
-
-    setToppingPrice(ingredientsPrice[topping] * ingredientsQuantity[topping]);
-  };
-
-  // useEffect(
-  //   (topping) => {
-  //     setTimeout(() => {
-  //       setToppingPrice(
-  //         ingredientsPrice[topping] * ingredientsQuantity[topping]
-  //       );
-  //     }, 100);
-  //   },
-  //   [ingredientsQuantity]
-  // );
-
-  const removeIngredients = (topping) => {
-    if (ingredientsQuantity[topping] > 0) {
-      setIngredientsQuantity((prev) => ({
-        ...prev,
-        [topping]: prev[topping] - 1,
-      }));
-    }
-
-    setToppingPrice(ingredientsPrice[topping] * ingredientsQuantity[topping]);
-  };
 
   // new ---------------
   const handleSelectItem = (ing) => {
@@ -150,14 +89,14 @@ export default function Store() {
     );
     console.log(priceArr);
     const total = priceArr.reduce((prev, curr) => prev + curr, 0);
-    console.log(total);
+    // console.log(total);
     return total;
   };
   // -------------------------------------
   const items = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = items.reduce(
-    (total, { price = 0 }) => total + price + toppingPrice,
+    (total, { price = 0 }) => total + price + calTotalPrice(),
     0
   );
 
@@ -197,18 +136,16 @@ export default function Store() {
             key={index}
             product={item}
             index={index}
-            toppingPrice={toppingPrice}
+            calTotalPrice={calTotalPrice}
             handleSelectItem={handleSelectItem}
             handleRemoveItem={handleRemoveItem}
-            ingredientsQuantity={ingredientsQuantity}
+            selected={selected}
           />
         ))}
       </div>
 
       <div className="priceNdOrderBttn">
-        <p className="totalPrice">
-          Total price: ₹{totalPrice} + {calTotalPrice()}
-        </p>
+        <p className="totalPrice">Total price: ₹{totalPrice}</p>
         <br />
         <button className="placeOrderBttn" onClick={openFormModalHandler}>
           Place Order
@@ -225,7 +162,3 @@ export default function Store() {
     </div>
   );
 }
-
-// setTimeout(() => {
-//   setToppingPrice(ingredientsPrice[topping] * ingredientsQuantity[topping]);
-// }, 100);
