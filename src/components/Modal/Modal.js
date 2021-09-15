@@ -2,12 +2,12 @@ import React from "react";
 import "./modal.css";
 
 function Modal(props) {
-  const { closeHandler, totalPrice , abc } = props;
-  
+  const { closeHandler, totalPrice, notify } = props;
+
   return (
     <div className="modalMainDiv">
       <span onClick={closeHandler} className="closeBtn"></span>
-      <form className ="detailForm" onSubmit={abc}>
+      <form className="detailForm">
         <label>
           First Name:
           <input type="text" className="detailFormInputs" required />
@@ -29,7 +29,7 @@ function Modal(props) {
           <input type="number" className="detailFormInputs" required />
         </label>
         <p>Total price: ₹{totalPrice}</p>
-        <button className="confirmOrderBttn" type="submit">
+        <button className="confirmOrderBttn" type="submit" onClick={notify}>
           Confirm Order
         </button>
       </form>

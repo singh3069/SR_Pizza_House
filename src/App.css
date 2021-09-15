@@ -236,3 +236,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.customEmojii {
+  padding: 15px;
+  opacity: 0;
+  transition: 750ms all;
+}
+
+.customEmojii:hover {
+  opacity: 1;
+}

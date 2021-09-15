@@ -5,6 +5,7 @@ function Ingredients({
   removeIngredients,
   ingredientsQuantity,
   ingredientsPrice,
+  toppingPrice,
 }) {
   const [showIngredient, setShowIngredient] = useState(false);
 
@@ -67,7 +68,7 @@ function Ingredients({
           className=" border-solid border-2 border-WelCaTxt text-txtColor bg-bgRed shadow-lg box-border p-1 rounded-lg"
           onClick={toggleIngredients}
         >
-          👨‍🍳
+          <span className="customEmojii">👨‍🍳</span>
         </button>
       </div>
     </div>
