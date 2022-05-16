@@ -1,12 +1,11 @@
-// yahaan p carousel slider bana hai 
+import { ImageSliderData } from "./ImageSliderData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronCircleRight,
+  faChevronCircleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
-// import React, { useState } from 'react';
-import { ImageSliderData } from './ImageSliderData';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
-
-const ImageSlider = ({  prevSlide , nextSlide , current }) => {      
-
+const ImageSlider = ({ prevSlide, nextSlide, current }) => {
   return (
     <section className="slider">
       <FontAwesomeIcon
@@ -41,6 +40,4 @@ const ImageSlider = ({  prevSlide , nextSlide , current }) => {
   );
 };
 
-
 export default ImageSlider;
-

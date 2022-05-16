@@ -27,6 +27,7 @@ const CartItem = ({
   calTotalPrice,
   selected,
 }) => {
+  console.log(product.toppingPrice);
   return (
     <div className="pizzaImageDetail">
       <div className="cartImgDiv">
@@ -40,7 +41,9 @@ const CartItem = ({
           <h2>{product.size}</h2>
           <p>
             {" "}
-            Price :- <strong>₹{product.price + calTotalPrice()}</strong>
+            Price :- <strong>₹{product.price}</strong>
+            <br />
+            Toppings:- <strong>₹{product.toppingPrice}</strong>
           </p>
         </div>
         <button
@@ -87,19 +90,30 @@ export default function Store() {
     const priceArr = Object.keys(selected).map(
       (ing) => selected[ing] * ingredientsPrice[ing]
     );
-    console.log(priceArr);
     const total = priceArr.reduce((prev, curr) => prev + curr, 0);
     // console.log(total);
     return total;
   };
+
   // -------------------------------------
-  const items = useCart();
+  const data = useCart();
+  const items = data.map((item) => ({
+    ...item,
+    toppingPrice: calTotalPrice(),
+  }));
+
   const dispatch = useDispatchCart();
-  const totalPrice = items.reduce(
-    (total, { price = 0 }) => total + price + calTotalPrice(),
+
+  console.log({ items });
+
+  const price = items.reduce((total, { price = 0 }) => total + price, 0);
+  const priceWithToppings = items.reduce(
+    (total, { toppingPrice = 0 }) => total + toppingPrice,
     0
   );
-
+  const totalPrice = price + priceWithToppings;
+  console.log({ totalPrice });
+  // console.log(items.toppingPrice);
   const openFormModalHandler = () => {
     setModalState(true);
   };
